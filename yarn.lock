@@ -5594,11 +5594,11 @@ __metadata:
   linkType: hard
 
 "figures@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "figures@npm:3.1.0"
+  version: 3.2.0
+  resolution: "figures@npm:3.2.0"
   dependencies:
     escape-string-regexp: ^1.0.5
-  checksum: 60e4691fc80c3b44161192f8d104824e53ed14e4056b52322c3aaf9516206a40ceaf39cd3c759f9c85c080c8a454a3bbdb848f436c92f2ccb37e2ab163b2bbbd
+  checksum: d9a3b7bec6de1de3bdc7c08049e6fc4c3a3e31a2edd39a08697c68d902b73538baf121ee897424da18376ed68b33097aa35064c3c774fe4f32b199a11353813b
   languageName: node
   linkType: hard
 
