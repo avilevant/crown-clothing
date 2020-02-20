@@ -2,25 +2,38 @@ import React from 'react';
 import './header.scss';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
+import { auth } from '../../firebase/firebase.utils';
 
-const Header = () => (
-    <div className='header'>
-        <Link className='logo-container' to='/'>
-        <Logo className='logo'/>
-        </Link>
-      <div className='options'>
-        <Link className='options' to='/shop'>
-        SHOP
-        </Link>
-        <Link className='options' to='/contact'>
-        CONTACT
-        </Link>
-        
-      </div>  
+const Header = ({currentUser}) => ( 
+  <div className = 'header' >
+  <Link className = 'logo-container' to = '/' >
+  <Logo className = 'logo' />
+  </Link> 
+  {currentUser
+    ?
+      ( <div className = 'header header__user'>
+     `you are signed in as  {currentUser.email}`
+      </div>)
+    :
+      ( <div className = 'header header__user'>
+      {''}
+      </div>) }
+  <div className = 'options' >
+  <Link className = 'options' to = '/shop' >SHOP </Link> 
+  <Link className = 'options' to = '/contact' >CONTACT </Link> 
+  
+  {currentUser
+     ?
+       ( <div className = 'options' onClick={()=>auth.signOut()}>
+       SIGN OUT
+       </div>)
+     :
+       ( <Link className = 'options' to = '/SignIn' >
+       SIGN IN
+       </Link>) }
 
-
-
-    </div>
-)
-
-export default Header;
+       
+ </div>  
+</div>
+ )
+  export default Header;
