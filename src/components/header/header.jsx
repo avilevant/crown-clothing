@@ -12,7 +12,7 @@ const Header = ({currentUser}) => (
   {currentUser
     ?
       ( <div className = 'header header__user'>
-     `you are signed in as  {currentUser.email}`
+     `you are signed in as  {currentUser.displayName}`
       </div>)
     :
       ( <div className = 'header header__user'>
